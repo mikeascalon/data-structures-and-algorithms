@@ -19,7 +19,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
+  return arr.map((n) => n + 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  // Solution code here...
+  return arr.map((n) => n + '?');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +43,13 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  const resultArr =[];
+
+  for(let i=0; i < arr.length; i++){
+    const powerOfTwo = Math.pow(2, arr[i]);
+    resultArr.push(powerOfTwo);
+  }
+  return resultArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
