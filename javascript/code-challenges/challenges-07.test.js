@@ -110,7 +110,7 @@ const alphabetize = (arr) => {
     } else if (a.length > b.length) {
       return 1;
     } else {
-      
+
       return 0;
     }
   });
@@ -130,7 +130,7 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => a.price - b.price);
 };
 
 /* ------------------------------------------------------------------------------------------------
