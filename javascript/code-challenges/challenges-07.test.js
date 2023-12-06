@@ -90,7 +90,30 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+
+    for (let i = 0; i < Math.min(a.length, b.length); i++) {
+      const charA = a.charCodeAt(i);
+      const charB = b.charCodeAt(i);
+
+
+      if (charA < charB) {
+        return -1;
+      } else if (charA > charB) {
+        return 1;
+      }
+    }
+
+
+    if (a.length < b.length) {
+      return -1;
+    } else if (a.length > b.length) {
+      return 1;
+    } else {
+      
+      return 0;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
