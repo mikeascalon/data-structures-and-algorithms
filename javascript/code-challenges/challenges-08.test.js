@@ -35,7 +35,15 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  const before = arr.slice(0, idx);
+  const after = arr.slice(idx + 3);
+
+
+  const result = before.concat(after);
+
+
+  return result;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +71,11 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
+
   return result;
 };
 
@@ -76,7 +88,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split('');
 };
 
 
@@ -123,7 +135,14 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach((ingredient) => {
+    const words = ingredient.split(" ");
+
+    const foodName = words.slice(2).join(" ");
+
+    result.push(foodName);
+  });
+
   return result;
 };
 
