@@ -33,8 +33,14 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  const flatArray = matrix.reduce((acc, row) => acc.concat(row), []);
+
+
+  const max = Math.max(...flatArray);
+
+  return max;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
