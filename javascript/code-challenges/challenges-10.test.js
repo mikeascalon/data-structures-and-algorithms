@@ -57,8 +57,20 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  let sum = 0;
+
+  // Iterate through each row of the matrix
+  for (let i = 0; i < matrix.length; i++) {
+    // Iterate through each element in the current row
+    for (let j = 0; j < matrix[i].length; j++) {
+      // Add the current element to the sum
+      sum += matrix[i][j];
+    }
+  }
+
+  return sum;
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
