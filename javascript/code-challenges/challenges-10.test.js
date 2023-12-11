@@ -59,11 +59,11 @@ return: 35
 const totalSum = (matrix) => {
   let sum = 0;
 
-  // Iterate through each row of the matrix
+
   for (let i = 0; i < matrix.length; i++) {
-    // Iterate through each element in the current row
+
     for (let j = 0; j < matrix[i].length; j++) {
-      // Add the current element to the sum
+
       sum += matrix[i][j];
     }
   }
@@ -96,9 +96,25 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
+  const totalSalesPerHour = [];
 
+  // Iterate through each hour of operation
+  for (let hourIndex = 0; hourIndex < hoursOpen.length; hourIndex++) {
+    let hourlyTotal = 0;
+
+    // Iterate through each store and sum the sales for the current hour
+    for (let storeIndex = 0; storeIndex < stores.length; storeIndex++) {
+      hourlyTotal += stores[storeIndex][hourIndex];
+    }
+
+    // Add the total sales for the current hour to the result array
+    totalSalesPerHour.push(hourlyTotal);
+  }
+
+  return totalSalesPerHour;
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
