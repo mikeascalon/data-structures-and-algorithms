@@ -57,7 +57,7 @@ const findHappiness = (arr) => {
     }
   }
 
-  
+
   return happyStrings;
 };
 
@@ -70,7 +70,7 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  return arr.map((phonenumbers) => phonenumbers.replace(/\D/g,''));
 };
 
 /* ------------------------------------------------------------------------------------------------
