@@ -82,7 +82,7 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('').filter((char, index) => index % 2 !==0).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +92,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every((str)=> str.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
