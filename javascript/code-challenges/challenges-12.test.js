@@ -166,6 +166,16 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
+  const shortestCharacter = data
+    .filter(character => character.height !== 'unknown') // Filter out characters with unknown height
+    .map(character => ({
+      name: character.name,
+      height: parseInt(character.height)
+    })) // Map to an array of objects with name and numeric height
+    .reduce((shortest, current) => (current.height < shortest.height) ? current : shortest, { height: Infinity })
+    .name; // Reduce to find the object with the shortest height and return its name
+
+  return shortestCharacter;
 
 };
 
