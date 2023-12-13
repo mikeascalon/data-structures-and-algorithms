@@ -42,7 +42,13 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  return input.reduce((total, array) => {
+    
+    return (
+      total +
+      array.reduce((count, number) => (number === target ? count + 1 : count), 0)
+    );
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
