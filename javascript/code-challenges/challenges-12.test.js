@@ -43,7 +43,7 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   return input.reduce((total, array) => {
-    
+
     return (
       total +
       array.reduce((count, number) => (number === target ? count + 1 : count), 0)
@@ -62,8 +62,12 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.reduce((total, array) => {
+    // Use reduce to sum the elements in each array
+    return total + array.reduce((sum, number) => sum + number, 0);
+  }, 0);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
