@@ -98,7 +98,10 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  const pattern = /\d/;
+
+  // Test if the pattern matches the input
+  return pattern.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
