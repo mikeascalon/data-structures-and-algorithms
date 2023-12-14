@@ -65,7 +65,7 @@ const sortByChildren = (charArray) => {
     return childrenComparison;
   };
 
-  // Sort the characters array using the compareFunction
+
   charArray.sort(compareFunction);
 
   return charArray;
@@ -81,7 +81,7 @@ Write a function named containsW that takes in a string. This function should us
 const containsW = (str) => {
   const pattern = /w/;
 
-  // Test if the pattern matches the string
+
   return pattern.test(str);
 };
 
@@ -100,7 +100,6 @@ For example:
 const isNum = (input) => {
   const pattern = /\d/;
 
-  // Test if the pattern matches the input
   return pattern.test(input);
 };
 
@@ -113,7 +112,7 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   const pattern = /\bworld\b/;
-  return pattern.test(input.toString().toLowerCase());
+  return pattern.test(input.toString());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,7 +134,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const pattern = /^[A-J]/i;
+
+
+  return arr.filter(city => pattern.test(city));
 };
 
 /* ------------------------------------------------------------------------------------------------
