@@ -28,4 +28,6 @@ To run your tests
 
 [Binary Search](python/docs/array-binary-search/README.md)
 
+[Sum of each row](python/docs/sum-of-each-row/README.md)
+
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
