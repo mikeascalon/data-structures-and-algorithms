@@ -27,9 +27,10 @@ class LinkedList:
 
     def insert_before(self, target_value, new_value):
         new_node = Node(new_value)
+
         if not self.head:
-            self.head = new_node
-            return
+            raise TargetError(f"Target value '{target_value}' not found in the list.")
+
 
         if self.head.value == target_value:
             new_node.next = self.head
@@ -44,19 +45,16 @@ class LinkedList:
                 return
             current_node = current_node.next
 
-        current_node = self.head
-        while current_node.next:
-            if current_node.next.value == target_value:
-                new_node.next = current_node.next
-                current_node.next = new_node
-                return
-            current_node = current_node.next
 
         # If the loop completes and the target value is not found
         raise TargetError(f"Target value '{target_value}' not found in the list.")
 
     def insert_after(self, target_value, new_value):
         new_node = Node(new_value)
+    
+        if not self.head:
+            raise TargetError(f"Target value '{target_value}' not found in the list.")
+
         current_node = self.head
         while current_node:
             if current_node.value == target_value:
@@ -64,6 +62,9 @@ class LinkedList:
                 current_node.next = new_node
                 return
             current_node = current_node.next
+
+        # If the loop completes and the target value is not found
+        raise TargetError(f"Target value '{target_value}' not found in the list.")
 
     def includes(self, value):
         current_node = self.head
@@ -89,5 +90,5 @@ class LinkedList:
         return elements
 
 
-class TargetError:
+class TargetError(BaseException):
     pass
