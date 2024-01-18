@@ -73,6 +73,31 @@ class LinkedList:
                 return True
             current_node = current_node.next
         return False
+    
+
+    def kth_from_end(self, k):
+        if k < 0:
+            raise TargetError("k should be a non-negative integer.")
+
+        slow_pointer = fast_pointer = self.head
+
+        # Move the fast pointer k nodes ahead
+        for _ in range(k):
+            if fast_pointer is None:
+                raise TargetError(f"The list does not have {k+1} elements.")
+            fast_pointer = fast_pointer.next
+
+        # Move both pointers until the fast pointer reaches the end
+        while fast_pointer and fast_pointer.next:
+            slow_pointer = slow_pointer.next
+            fast_pointer = fast_pointer.next
+
+        if fast_pointer is None:
+            raise TargetError(f"The list does not have {k+1} elements.")
+
+        return slow_pointer.value
+
+
 
     def __str__(self):
         
