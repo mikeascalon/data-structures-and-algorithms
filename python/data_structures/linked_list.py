@@ -1,16 +1,24 @@
 class Node:
-    def __init__(self, value):
+    def __init__(self, value, next_=None):
         self.value = value
         self.next = None
+        self.next = next_
 
 class LinkedList:
+    """A LinkedList class with an appropriate string representation."""
     def __init__(self):
         self.head = None
 
     def insert(self, value):
-        new_node = Node(value)
-        new_node.next = self.head
-        self.head = new_node
+        
+        self.head = Node(value, self.head)
+
+    def __iter__(self):
+        """Iterator to allow traversal of the list."""
+        current = self.head
+        while current:
+            yield current.value
+            current = current.next
 
     
     def append(self, value):
