@@ -1,9 +1,5 @@
 from data_structures.linked_list import Node
-
-class InvalidOperationError(Exception):
-    """Custom exception for invalid operations on the queue."""
-    pass
-
+from data_structures.invalid_operation_error import InvalidOperationError
 
 
 class Queue:
@@ -52,6 +48,7 @@ class Queue:
         """
         if self.is_empty():
             raise InvalidOperationError("Queue is empty")
+        
         return self.front.value
 
     def dequeue(self):
@@ -59,9 +56,8 @@ class Queue:
         Removes the front node from the queue and returns its value.
         """
         # if the Queue is empty
-        if self.front is None:
-            # TODO: raise an error
-            return None
+        if self.is_empty():
+            raise InvalidOperationError("Queue is empty")
 
         # get the value
         dequeue_value = self.front.value
