@@ -1,15 +1,24 @@
 class BinaryTree:
     """
-    Put docstring here
+      Binary Tree is a hierarchical data structure where each node has at most two children,
+    referred to as the left child and the right child.
+
+    This class provides methods for traversing the binary tree using three different orders:
+    - Pre-order: Root, Left, Right
+    - In-order: Left, Root, Right
+    - Post-order: Left, Right, Root
     """
 
     def __init__(self):
-        
+        """
+        Initialize an empty binary tree.
+        """
         self.root = None
 
     def pre_order(self):
 
         """
+        Perform a pre-order traversal of the binary tree.
         Task is 
         return root result  + left node result + right node result
         """
@@ -30,6 +39,7 @@ class BinaryTree:
     def in_order(self):
 
         """
+         Perform an in-order traversal of the binary tree.
         Task is 
         return left result  + root  result + right node result
         """
