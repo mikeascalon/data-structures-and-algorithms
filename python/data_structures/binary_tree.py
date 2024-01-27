@@ -4,7 +4,8 @@ class BinaryTree:
     """
 
     def __init__(self):
-        self.init = self
+        
+        self.root = None
 
     def pre_order(self):
 
