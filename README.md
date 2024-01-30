@@ -30,4 +30,6 @@ To run your tests
 
 [Sum of each row](python/docs/sum-of-each-row/README.md)
 
+[Tree max](python/docs/tree_max/README.md)
+
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
