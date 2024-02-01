@@ -32,4 +32,6 @@ To run your tests
 
 [Tree max](python/docs/tree_max/README.md)
 
+[FizzBuzz]((python/docs/tree_fizz_Buzz/README.md))
+
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
