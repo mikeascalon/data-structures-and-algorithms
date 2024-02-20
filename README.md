@@ -34,4 +34,6 @@ To run your tests
 
 [FizzBuzz]((python/docs/tree_fizz_Buzz/README.md))
 
+[Hash Table repeated word]((python/docs/hastable_repeated_word/README.md))
+
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
