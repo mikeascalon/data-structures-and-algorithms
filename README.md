@@ -36,4 +36,6 @@ To run your tests
 
 [Hash Table repeated word]((python/docs/hastable_repeated_word/README.md))
 
+[Hash Table Left Join ]((python/docs/hastable_left_join/README.md))
+
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.

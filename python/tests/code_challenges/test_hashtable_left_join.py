@@ -6,7 +6,7 @@ def test_exists():
     assert left_join
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_example():
     synonyms = {
         "diligent": "employed",
@@ -24,13 +24,53 @@ def test_example():
     }
 
     expected = [
-        ["fond", "enamored", "averse"],
-        ["wrath", "anger", "delight"],
         ["diligent", "employed", "idle"],
-        ["outfit", "garb", "NONE"],
+        ["fond", "enamored", "averse"],
         ["guide", "usher", "follow"],
+        ["outfit", "garb", "NONE"],
+        ["wrath", "anger", "delight"],
+        
     ]
 
     actual = left_join(synonyms, antonyms)
 
+    assert actual == expected
+
+def test_no_matching_keys():
+    synonyms = {"happy": "joyful", "bright": "luminous"}
+    antonyms = {"sad": "unhappy", "dark": "dim"}
+    expected = [
+        ["happy", "joyful", "NONE"],
+        ["bright", "luminous", "NONE"],
+    ]
+    actual = left_join(synonyms, antonyms)
+    assert actual == expected
+
+def test_empty_dictionaries():
+    synonyms = {}
+    antonyms = {}
+    expected = []
+    actual = left_join(synonyms, antonyms)
+    assert actual == expected
+
+def test_all_keys_have_antonyms():
+    synonyms = {
+        "large": "big",
+        "small": "tiny",
+        "cold": "chilly",
+        "hot": "warm",
+    }
+    antonyms = {
+        "large": "small",
+        "small": "large",
+        "cold": "hot",
+        "hot": "cold",
+    }
+    expected = [
+        ["large", "big", "small"],
+        ["small", "tiny", "large"],
+        ["cold", "chilly", "hot"],
+        ["hot", "warm", "cold"],
+    ]
+    actual = left_join(synonyms, antonyms)
     assert actual == expected
